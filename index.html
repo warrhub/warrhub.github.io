@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-----------------------------------------------------------------
+Created by Carlos Contreras | November 2018
+
+Current problem: Having an office with 15 employees and only one bathroom, multiple times we 
+find ourselves having to make the walk to the bathroom only to find it busy. Sometimes, we need to ask 
+each other if they know if someone is in the restroom. 
+
+Solution: With the use of this file, employees can open their browsers and see the current status of the 
+restroom from their own computers. 
+
+--------------------------------------------------------------------->
+
+
+	<title>Restroom Status</title>
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Fredoka+One|Life+Savers" rel="stylesheet">
+</head>
+
+<style>
+#status{color: black;font-family: 'Dancing Script', cursive; font-size:300%;}
+div {text-align:center;}
+body{font-family: 'Life Savers', cursive; font-size:130%;}
+button{font-size:30px;font-family: 'Fredoka One', cursive;border-radius: 10px;background:pink;cursor: pointer;text-align: center;
+    text-decoration: none;}
+	
+	#resetButton{font-size:15px; background:white;}
+	
+	p{font-size:40px;}
+	
+
+hr{ border: 0; border-bottom: 1px dashed #ccc; background: #999;}
+
+</style>
+
+<script>
+function vacant(pID){document.getElementById(pID).innerHTML = "VACANT"; document.body.style.backgroundColor= "#c2edb6";}
+function busy(pID) {document.getElementById(pID).innerHTML = "BUSY";	document.body.style.backgroundColor= "#ff6928";}
+function reset(pID){document.getElementById(pID).innerHTML="Unknown";document.body.style.backgroundColor="white";}
+
+</script>
+
+<body>
+
+<div>
+<h1>RESTROOM STATUS IS:</h1><br>
+
+<p id="status">unknown</p>
+
+<br><br><br>
+<hr>
+<p >Change status to:</p>
+<button  onclick="vacant('status')" >VACANT</button>
+<button  onclick="busy('status')">BUSY</button><br>
+
+
+<br><button id="resetButton" onclick="reset('status')">Reset</button>
+
+</div>
+
+
+</body>
+</html>
